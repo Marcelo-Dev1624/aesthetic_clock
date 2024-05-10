@@ -124,7 +124,7 @@ body.light-mode{
 }
 
 
-@media (min-width:768px) and (max-width:1023px){
+@media (min-width:767px) and (max-width:1023px){
     body{
         overflow-x: hidden;
     }
@@ -237,13 +237,20 @@ body.light-mode{
     }
 
     #mode-switch,#mode-switch.light-mode{
-        width: calc(5rem - .5rem);
-        height:calc(2.5rem - .75rem);
+        width: 3.5rem;
+        height:1.5rem;
     }
 
     #switch-ball,  #switch-ball.light-mode {
-    width: calc(1.5rem - .5rem);
-    height:calc(1.5rem - .5rem);
+    width: .75rem;
+    height:.75rem;
+    }
+
+    #switch-ball{
+        transform: translateX(250%) translateY(-50%);
+    }
+    #switch-ball.light-mode{
+        transform: translateX(0) translateY(-50%); 
     }
 
 }

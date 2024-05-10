@@ -17,4 +17,4 @@ switchButton.addEventListener('click', () => {
 
 
 // 2. Create a CSS class for dark mode and light mode, apply it to the body of your HTML page
-// 3. Use JavaScript to add an event listener to the button, so when it is clicked, it toggles the dark and light mode
+// 3. Use JavaScript to add an event listener to the button, so when it is clicked, it toggles the dark and light modes
