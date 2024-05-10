@@ -1,0 +1,249 @@
+:root{
+    --light-color: #e2e2e2;
+    --dark-color: #030303;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90vh;
+    background-color: var(--dark-color);
+    color: var(--light-color);
+    transition: 300ms ease-in-out color;
+    font-family: 'JetBrains Mono', sans-serif;
+}
+
+body.light-mode{
+    background-color: var(--light-color);
+    color: var(--dark-color);
+    transition:  300ms ease-in-out color;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0;
+    width: 100%;
+    height: 100%;
+}
+
+#clock{
+    width: 100%;
+    height:30vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+    position: relative;
+}
+
+
+#seconds, #minutes, #hours{
+    font-size: 10rem;
+
+}
+
+
+
+
+.divider{
+    font-family: 'Nunito', sans-serif;
+    font-weight: 300;
+    font-size: 6rem;
+}
+
+#date{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    width: 20%;
+}
+#day, #month,#year{
+    font-size: 3rem;
+}
+
+.date-divider{
+    font-size: 3rem;
+    margin: 0;
+    gap: 0;
+}
+
+#darkLightMode{
+    width: 300px;
+    height: auto;
+    position: absolute;
+    opacity: .03;
+    top: 10px;
+    right: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;align-items: center;
+    transition: opacity 300ms ease-in-out;
+}
+
+
+#mode-switch{
+    width: 5rem;
+    height: 2.5rem;
+    border-radius: 2rem;
+    border: solid var(--light-color);
+    background: transparent;
+    content: '';
+    cursor: pointer;
+    transition: 300ms ease-in-out;
+}
+
+#mode-switch.light-mode{
+
+    border: solid var(--dark-color);
+    background: transparent;
+    transition:  300ms ease-in-out;
+
+}
+
+#switch-ball{
+    position: absolute;
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 50%;
+    background-color:var(--light-color);
+    transform: translateX(2.4rem) translateY(-50%); 
+    transition:  300ms ease-in-out;
+}
+
+#switch-ball.light-mode{
+    background-color: var(--dark-color);
+    transition:  300ms ease-in-out;
+    transform: translateX(0rem) translateY(-50%); 
+}
+
+
+@media (min-width:768px) and (max-width:1023px){
+    body{
+        overflow-x: hidden;
+    }
+
+    #clock{
+        width: 100%;
+        height:20%;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+        position: relative;
+    }
+
+    .divider{
+        font-size: 4rem;
+    }
+
+    #seconds, #minutes, #hours{
+        font-size: 6rem;
+    
+    }
+
+    #date{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+        width: 40%;
+    }
+
+    .date-divider{
+        font-size: 2rem;
+    }
+
+    #day, #month,#year{
+        font-size: 2rem;
+    }
+
+    #darkLightMode{
+        width: calc(300px - 150px);
+    }
+
+    #mode-label{
+        font-size: 16px;
+    }
+
+    #mode-switch,#mode-switch.light-mode{
+        width: calc(5rem - .75rem);
+        height:calc(2.5rem - 1rem);
+    }
+
+    #switch-ball,  #switch-ball.light-mode {
+    width: calc(1.5rem - .75rem);
+    height:calc(1.5rem - .75rem);
+    }
+}
+
+
+@media (max-width:767px){
+    body{
+        overflow-x: hidden;
+    }
+
+    #clock{
+        width: 100%;
+        height:20%;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+        position: relative;
+    }
+
+    .divider{
+        font-size: 3rem;
+    }
+
+    #seconds, #minutes, #hours{
+        font-size: 3rem;
+    
+    }
+
+    #date{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: .5rem;
+        width: 20%;
+    }
+
+    .date-divider{
+        font-size: 1rem;
+    }
+
+    #day, #month,#year{
+        font-size: 1.5rem;
+    }
+
+    #darkLightMode{
+        width: calc(300px - 150px);
+    }
+
+    #mode-label{
+        font-size: 16px;
+    }
+
+    #mode-switch,#mode-switch.light-mode{
+        width: calc(5rem - .5rem);
+        height:calc(2.5rem - .75rem);
+    }
+
+    #switch-ball,  #switch-ball.light-mode {
+    width: calc(1.5rem - .5rem);
+    height:calc(1.5rem - .5rem);
+    }
+
+}
