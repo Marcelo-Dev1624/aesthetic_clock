@@ -360,30 +360,96 @@ body.light-mode {
     font-size: 1.5rem;
   }
 
-  #darkLightMode {
-    width: calc(300px - 150px);
+  .nav-toggler {
+    position: absolute;
+    right: 10px;
+    top: 50px;
+  
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    z-index: 101;
+
   }
 
-  #mode-label {
-    font-size: 16px;
+  #menu h1{
+    font-size: 3rem;
   }
 
-  #mode-switch,
-  #mode-switch.light-mode {
-    width: 3.5rem;
-    height: 1.5rem;
+  #darkLightModeContainer {
+    width: 80%;
+    height: auto;
+    padding: 1rem ;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  
+    /* From https://css.glass */
+    background: rgba(50, 50, 50, 0.79);
+    border-radius: 20px;
+    box-shadow: 0 4px 30px rgba(216, 216, 216, 0.159);
+    backdrop-filter: blur(7.7px);
+    -webkit-backdrop-filter: blur(7.7px);
+    color: var(--light-color);
+    transition: color 300ms ease-in-out;
   }
-
-  #switch-ball,
-  #switch-ball.light-mode {
-    width: 0.75rem;
-    height: 0.75rem;
+  
+  
+  #darkLightModeContainer.light-mode {
+    /* From https://css.glass */
+    background: rgba(191, 191, 191, 0.79);
+    border-radius: 20px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(7.7px);
+    -webkit-backdrop-filter: blur(7.7px);
+    color: var(--dark-color);
   }
-
-  #switch-ball {
-    transform: translateX(250%) translateY(-50%);
+  
+  .themeBtnsContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 50%;
+    gap: 0;
   }
-  #switch-ball.light-mode {
-    transform: translateX(0) translateY(-50%);
+  
+  .btn {
+    width: 100%;
+    height: 100%;
+    margin: 1rem;
+    border-radius: auto;
+    background-color: transparent;
+    color: var(--dark-color);
+    border: none;
+    cursor: pointer;
+    outline: none;
+    font-size: 1.5rem;
+    transition: color 300ms ease-in-out;
+    font-family: "JetBrains Mono", sans-serif;
+  }
+  
+  #darkModeBtn.clicked {
+    background-color: var(--light-color);
+    color: var(--dark-color);
+    border-radius: 10px;
+  }
+  #darkModeBtn.light-mode {
+    background-color: transparent;
+    color: var(--dark-color);
+    border-radius: 10px;
+  }
+  #lightModeBtn{
+    background-color: transparent;
+    color: var(--light-color);
+    border-radius: 10px;
+  
+  }
+  #lightModeBtn.clicked {
+    background-color: var(--light-color);
+    color: var(--dark-color);
+    border-radius: 10px;
   }
 }
