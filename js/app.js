@@ -5,7 +5,7 @@ const dayDisplay = document.getElementById("day");
 const monthDisplay = document.getElementById("month");
 const yearDisplay = document.getElementById("year");
 
-
+/* Not used at the moment, its a function to convert the index of the month to its equivalent, as string
 function convertNumberMonthToText(month) {
   const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "Decemeber" ];
 
@@ -56,10 +56,12 @@ function convertNumberMonthToText(month) {
   return month;
 }
 
+*/
+
 function setDate() {
   const now = new Date();
   const day = now.getDate();
-  const month = now.getMonth();
+  const month = now.getMonth() + 1;
   const year = now.getFullYear();
 
   const seconds = now.getSeconds();
