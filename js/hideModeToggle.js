@@ -8,13 +8,13 @@ navToggler.addEventListener("mousemove", () => {
 
 
   // Add an event listener for the 'mouseleave' event
-// When the mouse leaves the button, wait for 3 seconds and then set its opacity to 0.07
+// When the mouse leaves the button, wait for 3 seconds and then set its opacity to 0.2
   navToggler.addEventListener("mouseleave", () => {
     if (navToggler.classList.contains("opened")) {
       navToggler.style.opacity = "1";
     } else {
       setTimeout(() => {
-        navToggler.style.opacity = "0.07";
+        navToggler.style.opacity = "0.2";
       }, 3000);
     }
   });
@@ -25,13 +25,13 @@ navToggler.addEventListener("mousemove", () => {
 navToggler.addEventListener("touchstart", () => {
 
     // Add an event listener for the 'touchend' event
-// When the touch on the button ends, wait for 3 seconds and then set its opacity to 0.07
+// When the touch on the button ends, wait for 3 seconds and then set its opacity to 0.2
   navToggler.addEventListener("touchend", () => {
     if (navToggler.classList.contains("opened")) {
       navToggler.style.opacity = "1";
     } else {
       setTimeout(() => {
-        navToggler.style.opacity = "0.07";
+        navToggler.style.opacity = "0.2";
       }, 3000);
     }
   });

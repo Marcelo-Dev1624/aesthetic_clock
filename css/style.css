@@ -67,7 +67,7 @@ body.light-mode {
   cursor: pointer;
   z-index: 101;
   margin-right: 20px;
-  opacity: 0.07;
+  opacity: .2;
   transition: opacity 0.3s ease;
 }
 
@@ -140,6 +140,10 @@ body.light-mode {
   color: var(--dark-color);
 }
 
+#darkLightModeContainer h2{
+  font-size: 2rem;
+}
+
 .themeBtnsContainer {
   display: flex;
   flex-direction: row;
@@ -152,9 +156,9 @@ body.light-mode {
 
 .btn {
   width: 100%;
-  height: 100%;
+  height: 80%;
   margin: 1rem;
-  border-radius: auto;
+  border-radius: 10px;
   background-color: transparent;
   color: var(--dark-color);
   border: none;
@@ -168,23 +172,22 @@ body.light-mode {
 #darkModeBtn.clicked {
   background-color: var(--light-color);
   color: var(--dark-color);
-  border-radius: 10px;
+
 }
 #darkModeBtn.light-mode {
   background-color: transparent;
   color: var(--dark-color);
-  border-radius: 10px;
+
 }
 #lightModeBtn{
   background-color: transparent;
   color: var(--light-color);
-  border-radius: 10px;
+
 
 }
 #lightModeBtn.clicked {
-  background-color: var(--light-color);
-  color: var(--dark-color);
-  border-radius: 10px;
+  background-color: var(--dark-color);
+  color: var(--light-color);
 }
 
 /* ALL THE STYLES FOR THE MENU 
@@ -251,9 +254,10 @@ body.light-mode {
 * ENDS
 */
 
-@media (min-width: 767px) and (max-width: 1023px) {
+
+@media (min-width: 768px) and (max-width: 1023px) {
   body {
-    overflow-x: hidden;
+    overflow: hidden;
   }
 
   #clock {
@@ -268,13 +272,13 @@ body.light-mode {
   }
 
   .divider {
-    font-size: 4rem;
+    font-size: 3rem;
   }
 
   #seconds,
   #minutes,
   #hours {
-    font-size: 6rem;
+    font-size: 8rem;
   }
 
   #date {
@@ -282,44 +286,102 @@ body.light-mode {
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    gap: 1rem;
-    width: 40%;
+    gap: 0.5rem;
+    width: 20%;
   }
 
   .date-divider {
-    font-size: 2rem;
+    font-size: 1rem;
   }
 
   #day,
   #month,
   #year {
+    font-size: 3rem;
+  }
+
+  .nav-toggler {
+    position: absolute;
+    right: 0;
+    top: 50px;
+  
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    z-index: 101;
+    width: 0;
+
+  }
+
+  #menu h1{
+    font-size: 4rem;
+  }
+
+  #darkLightModeContainer {
+    width: 60%;
+    height: auto;
+    padding: 1rem ;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  
+    /* From https://css.glass */
+    background: rgba(50, 50, 50, 0.79);
+    border-radius: 20px;
+    box-shadow: 0 4px 30px rgba(216, 216, 216, 0.159);
+    backdrop-filter: blur(7.7px);
+    -webkit-backdrop-filter: blur(7.7px);
+    color: var(--light-color);
+    transition: color 300ms ease-in-out;
+  }
+  
+  
+  #darkLightModeContainer.light-mode {
+    /* From https://css.glass */
+    background: rgba(191, 191, 191, 0.79);
+    border-radius: 20px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(7.7px);
+    -webkit-backdrop-filter: blur(7.7px);
+    color: var(--dark-color);
+  }
+
+  #darkLightModeContainer h2{
     font-size: 2rem;
   }
-
-  #darkLightMode {
-    width: calc(300px - 150px);
+  
+  .themeBtnsContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 50%;
+    gap: 0;
+  }
+  
+  .btn {
+    width: 100%;
+    height: 5rem;
+    margin: .5rem;
+    border-radius: 10px;
+    background-color: transparent;
+    color: var(--dark-color);
+    border: none;
+    cursor: pointer;
+    outline: none;
+    font-size: 1.5rem;
+    transition: color 300ms ease-in-out;
+    font-family: "JetBrains Mono", sans-serif;
   }
 
-  #mode-label {
-    font-size: 16px;
-  }
-
-  #mode-switch,
-  #mode-switch.light-mode {
-    width: calc(5rem - 0.75rem);
-    height: calc(2.5rem - 1rem);
-  }
-
-  #switch-ball,
-  #switch-ball.light-mode {
-    width: calc(1.5rem - 0.75rem);
-    height: calc(1.5rem - 0.75rem);
-  }
+  
 }
 
 @media (max-width: 767px) {
   body {
-    overflow-x: hidden;
+    overflow: hidden;
   }
 
   #clock {
@@ -362,10 +424,11 @@ body.light-mode {
     font-size: 1.5rem;
   }
 
-  .nav-toggler {
+  #navToggler {
     position: absolute;
-    right: 10px;
+    right: 0px;
     top: 50px;
+    width: 50px;
   
     background-color: transparent;
     border: none;
@@ -407,6 +470,10 @@ body.light-mode {
     -webkit-backdrop-filter: blur(7.7px);
     color: var(--dark-color);
   }
+
+  #darkLightModeContainer h2{
+    font-size: 1.5rem;
+  }
   
   .themeBtnsContainer {
     display: flex;
@@ -420,9 +487,9 @@ body.light-mode {
   
   .btn {
     width: 100%;
-    height: 100%;
-    margin: 1rem;
-    border-radius: auto;
+    height: 4rem;
+    margin: .5rem;
+    border-radius: 10px;
     background-color: transparent;
     color: var(--dark-color);
     border: none;
@@ -433,25 +500,5 @@ body.light-mode {
     font-family: "JetBrains Mono", sans-serif;
   }
   
-  #darkModeBtn.clicked {
-    background-color: var(--light-color);
-    color: var(--dark-color);
-    border-radius: 10px;
-  }
-  #darkModeBtn.light-mode {
-    background-color: transparent;
-    color: var(--dark-color);
-    border-radius: 10px;
-  }
-  #lightModeBtn{
-    background-color: transparent;
-    color: var(--light-color);
-    border-radius: 10px;
-  
-  }
-  #lightModeBtn.clicked {
-    background-color: var(--light-color);
-    color: var(--dark-color);
-    border-radius: 10px;
-  }
+
 }
