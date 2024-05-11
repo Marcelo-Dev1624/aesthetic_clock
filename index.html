@@ -21,15 +21,30 @@
         rel="stylesheet">
 </head>
 
-<body class="light-mode">
+<body class="">
 
-    <div id="darkLightMode">
-        <h2 id="mode-label">Light/Dark Mode</h2>
-        <button id="mode-switch" class="light-mode">
+    <button id="navToggler" class="nav-toggler">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+    </button>
 
-            <div id="switch-ball" class="light-mode"></div>
-        </button>
-    </div>
+
+    <nav id="menu" class="">
+        <h1>Settings</h1>
+
+        <div id="darkLightModeContainer">
+                <h2 id="mode-label">Appearance</h2>
+            <div class="themeBtnsContainer">
+                <button id="darkModeBtn" class="btn dark-light-btn clicked">Dark</button>
+                <button id="lightModeBtn" class="btn dark-light-btn">Light</button>
+            </div>
+        </div>
+
+
+    </nav>
+
+
 
 
     <div class="container">
@@ -57,7 +72,8 @@
 
     <script src="js/app.js"></script>
     <script src="js/dark-light.js"></script>
-    <script src="js/hideModeToggle.js"></script>
+
+
 </body>
 
 </html>

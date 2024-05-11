@@ -1,256 +1,389 @@
-:root{
-    --light-color: #e2e2e2;
-    --dark-color: #030303;
+:root {
+  --light-color: #e2e2e2;
+  --dark-color: #030303;
 }
 
-body{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 90vh;
-    background-color: var(--dark-color);
-    color: var(--light-color);
-    transition: 300ms ease-in-out color;
-    font-family: 'JetBrains Mono', sans-serif;
+body {
+  display: flex;
+  overflow: hidden;
+  justify-content: center;
+  align-items: center;
+  height: 90vh;
+  background-color: var(--dark-color);
+  color: var(--light-color);
+
+  font-family: "JetBrains Mono", sans-serif;
+  transition: color 300ms ease-in-out;
 }
 
-body.light-mode{
-    background-color: var(--light-color);
-    color: var(--dark-color);
-    transition:  300ms ease-in-out color;
+body.light-mode {
+  background-color: var(--light-color);
+  color: var(--dark-color);
+  transition: color 300ms ease-in-out;
 }
 
-.container{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 0;
+/* ALL THE STYLES FOR THE MENU 
+* STARTS
+*/
+
+#menu {
+  display: flex;
+  position: absolute;
+  top: 0;
+  right: -2500px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  background-color: var(--dark-color);
+  color: var(--light-color);
+  transition: right 0.2s ease-in-out;
+  z-index: 11;
+  backdrop-filter: blur(7.7px);
+  -webkit-backdrop-filter: blur(7.7px);
+}
+
+#menu h1 {
+  font-size: 4rem;
+}
+
+#menu.light-mode {
+  color: var(--dark-color);
+  background-color: var(--light-color);
+}
+
+#menu.hidden {
+  right: 0;
+}
+
+.nav-toggler {
+  position: absolute;
+  right: 50px;
+  top: 50px;
+
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  z-index: 101;
+  margin-right: 20px;
+}
+
+.nav-toggler .bar {
+  display: block;
+  width: 30px;
+  height: 2px;
+  background-color: var(--light-color);
+  margin: 5px auto;
+  transition: 0.4s;
+  z-index: 12;
+}
+.nav-toggler.light-mode .bar {
+  background-color: var(--dark-color);
+}
+
+.nav-toggler.opened .bar:nth-child(1) {
+  opacity: 0;
+}
+
+.nav-toggler.opened .bar:nth-child(2) {
+  opacity: 1;
+  transform: rotate(45deg);
+}
+
+.nav-toggler.opened .bar:nth-child(3) {
+  transform: rotate(135deg) translate(-5px, 5px);
+}
+
+/* Light mode style for the bars of the button*/
+.nav-toggler.opened.light-mode .bar:nth-child(2) {
+  opacity: 1;
+  transform: rotate(45deg);
+  background-color: var(--dark-color);
+}
+
+.nav-toggler.opened.light-mode .bar:nth-child(3) {
+  transform: rotate(135deg) translate(-5px, 5px);
+  background-color: var(--dark-color);
+}
+
+/* Light mode style for the bars of the button - ENDS*/
+
+#darkLightModeContainer {
+  width: 500px;
+  height: 250px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  /* From https://css.glass */
+  background: rgba(50, 50, 50, 0.79);
+  border-radius: 20px;
+  box-shadow: 0 4px 30px rgba(216, 216, 216, 0.159);
+  backdrop-filter: blur(7.7px);
+  -webkit-backdrop-filter: blur(7.7px);
+  color: var(--light-color);
+  transition: color 300ms ease-in-out;
+}
+
+
+#darkLightModeContainer.light-mode {
+  /* From https://css.glass */
+  background: rgba(191, 191, 191, 0.79);
+  border-radius: 20px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(7.7px);
+  -webkit-backdrop-filter: blur(7.7px);
+  color: var(--dark-color);
+}
+
+.themeBtnsContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 50%;
+  gap: 0;
+}
+
+.btn {
+  width: 100%;
+  height: 100%;
+  margin: 1rem;
+  border-radius: auto;
+  background-color: transparent;
+  color: var(--dark-color);
+  border: none;
+  cursor: pointer;
+  outline: none;
+  font-size: 1.5rem;
+  transition: color 300ms ease-in-out;
+  font-family: "JetBrains Mono", sans-serif;
+}
+
+#darkModeBtn.clicked {
+  background-color: var(--light-color);
+  color: var(--dark-color);
+  border-radius: 10px;
+}
+#darkModeBtn.light-mode {
+  background-color: transparent;
+  color: var(--dark-color);
+  border-radius: 10px;
+}
+#lightModeBtn{
+  background-color: transparent;
+  color: var(--light-color);
+  border-radius: 10px;
+
+}
+#lightModeBtn.clicked {
+  background-color: var(--light-color);
+  color: var(--dark-color);
+  border-radius: 10px;
+}
+
+/* ALL THE STYLES FOR THE MENU 
+*ENDS
+*/
+
+/* ALL THE STYLES FOR THE CLOCK 
+* STARTS
+*/
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0;
+  width: 100%;
+  height: 100%;
+}
+
+#clock {
+  width: 100%;
+  height: 30vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+  position: relative;
+}
+
+#seconds,
+#minutes,
+#hours {
+  font-size: 10rem;
+}
+
+.divider {
+  font-family: "Nunito", sans-serif;
+  font-weight: 300;
+  font-size: 6rem;
+}
+
+#date {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  width: 20%;
+}
+#day,
+#month,
+#year {
+  font-size: 3rem;
+}
+
+.date-divider {
+  font-size: 3rem;
+  margin: 0;
+  gap: 0;
+}
+
+/* ALL THE STYLES FOR THE CLOCK 
+* ENDS
+*/
+
+@media (min-width: 767px) and (max-width: 1023px) {
+  body {
+    overflow-x: hidden;
+  }
+
+  #clock {
     width: 100%;
-    height: 100%;
-}
-
-#clock{
-    width: 100%;
-    height:30vh;
+    height: 20%;
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    gap: 3rem;
+    gap: 1rem;
     position: relative;
-}
+  }
 
+  .divider {
+    font-size: 4rem;
+  }
 
-#seconds, #minutes, #hours{
-    font-size: 10rem;
-
-}
-
-
-
-
-.divider{
-    font-family: 'Nunito', sans-serif;
-    font-weight: 300;
+  #seconds,
+  #minutes,
+  #hours {
     font-size: 6rem;
-}
+  }
 
-#date{
+  #date {
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    gap: 2rem;
-    width: 20%;
-}
-#day, #month,#year{
-    font-size: 3rem;
+    gap: 1rem;
+    width: 40%;
+  }
+
+  .date-divider {
+    font-size: 2rem;
+  }
+
+  #day,
+  #month,
+  #year {
+    font-size: 2rem;
+  }
+
+  #darkLightMode {
+    width: calc(300px - 150px);
+  }
+
+  #mode-label {
+    font-size: 16px;
+  }
+
+  #mode-switch,
+  #mode-switch.light-mode {
+    width: calc(5rem - 0.75rem);
+    height: calc(2.5rem - 1rem);
+  }
+
+  #switch-ball,
+  #switch-ball.light-mode {
+    width: calc(1.5rem - 0.75rem);
+    height: calc(1.5rem - 0.75rem);
+  }
 }
 
-.date-divider{
-    font-size: 3rem;
-    margin: 0;
-    gap: 0;
-}
+@media (max-width: 767px) {
+  body {
+    overflow-x: hidden;
+  }
 
-#darkLightMode{
-    width: 300px;
-    height: auto;
-    position: absolute;
-    opacity: .03;
-    top: 10px;
-    right: 10px;
+  #clock {
+    width: 100%;
+    height: 20%;
     display: flex;
-    flex-direction: column;
-    justify-content: center;align-items: center;
-    transition: opacity 300ms ease-in-out;
-}
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    position: relative;
+  }
 
+  .divider {
+    font-size: 3rem;
+  }
 
-#mode-switch{
-    width: 5rem;
-    height: 2.5rem;
-    border-radius: 2rem;
-    border: solid var(--light-color);
-    background: transparent;
-    content: '';
-    cursor: pointer;
-    transition: 300ms ease-in-out;
-}
+  #seconds,
+  #minutes,
+  #hours {
+    font-size: 3rem;
+  }
 
-#mode-switch.light-mode{
+  #date {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    width: 20%;
+  }
 
-    border: solid var(--dark-color);
-    background: transparent;
-    transition:  300ms ease-in-out;
+  .date-divider {
+    font-size: 1rem;
+  }
 
-}
+  #day,
+  #month,
+  #year {
+    font-size: 1.5rem;
+  }
 
-#switch-ball{
-    position: absolute;
-    width: 1.5rem;
+  #darkLightMode {
+    width: calc(300px - 150px);
+  }
+
+  #mode-label {
+    font-size: 16px;
+  }
+
+  #mode-switch,
+  #mode-switch.light-mode {
+    width: 3.5rem;
     height: 1.5rem;
-    border-radius: 50%;
-    background-color:var(--light-color);
-    transform: translateX(2.4rem) translateY(-50%); 
-    transition:  300ms ease-in-out;
-}
+  }
 
-#switch-ball.light-mode{
-    background-color: var(--dark-color);
-    transition:  300ms ease-in-out;
-    transform: translateX(0rem) translateY(-50%); 
-}
+  #switch-ball,
+  #switch-ball.light-mode {
+    width: 0.75rem;
+    height: 0.75rem;
+  }
 
-
-@media (min-width:767px) and (max-width:1023px){
-    body{
-        overflow-x: hidden;
-    }
-
-    #clock{
-        width: 100%;
-        height:20%;
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
-        gap: 1rem;
-        position: relative;
-    }
-
-    .divider{
-        font-size: 4rem;
-    }
-
-    #seconds, #minutes, #hours{
-        font-size: 6rem;
-    
-    }
-
-    #date{
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
-        gap: 1rem;
-        width: 40%;
-    }
-
-    .date-divider{
-        font-size: 2rem;
-    }
-
-    #day, #month,#year{
-        font-size: 2rem;
-    }
-
-    #darkLightMode{
-        width: calc(300px - 150px);
-    }
-
-    #mode-label{
-        font-size: 16px;
-    }
-
-    #mode-switch,#mode-switch.light-mode{
-        width: calc(5rem - .75rem);
-        height:calc(2.5rem - 1rem);
-    }
-
-    #switch-ball,  #switch-ball.light-mode {
-    width: calc(1.5rem - .75rem);
-    height:calc(1.5rem - .75rem);
-    }
-}
-
-
-@media (max-width:767px){
-    body{
-        overflow-x: hidden;
-    }
-
-    #clock{
-        width: 100%;
-        height:20%;
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
-        gap: 1rem;
-        position: relative;
-    }
-
-    .divider{
-        font-size: 3rem;
-    }
-
-    #seconds, #minutes, #hours{
-        font-size: 3rem;
-    
-    }
-
-    #date{
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
-        gap: .5rem;
-        width: 20%;
-    }
-
-    .date-divider{
-        font-size: 1rem;
-    }
-
-    #day, #month,#year{
-        font-size: 1.5rem;
-    }
-
-    #darkLightMode{
-        width: calc(300px - 150px);
-    }
-
-    #mode-label{
-        font-size: 16px;
-    }
-
-    #mode-switch,#mode-switch.light-mode{
-        width: 3.5rem;
-        height:1.5rem;
-    }
-
-    #switch-ball,  #switch-ball.light-mode {
-    width: .75rem;
-    height:.75rem;
-    }
-
-    #switch-ball{
-        transform: translateX(250%) translateY(-50%);
-    }
-    #switch-ball.light-mode{
-        transform: translateX(0) translateY(-50%); 
-    }
-
+  #switch-ball {
+    transform: translateX(250%) translateY(-50%);
+  }
+  #switch-ball.light-mode {
+    transform: translateX(0) translateY(-50%);
+  }
 }

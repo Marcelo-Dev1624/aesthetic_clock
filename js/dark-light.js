@@ -1,20 +1,83 @@
-//create a dark-light mode switch for the existing code
-// 1. Create a button in the HTML file with id="switch" and onclick function to toggle the dark and light mode
-
-const switchButton = document.getElementById('mode-switch');
-const switchButtonBall = document.getElementById('switch-ball');
+// Define all variables needed to target DOM elements
+const darkLightModeContainer = document.getElementById("darkLightModeContainer");
+const buttons = document.querySelectorAll(".btn");
+const darkModeBtn = document.getElementById("darkModeBtn");
+const lightModeBtn = document.getElementById("lightModeBtn");
 const body = document.body;
-let darkMode=false;
+const menu = document.getElementById("menu");
+const nav = document.getElementById("navToggler");
+let darkMode = false; // Initialize dark mode as true
 
-sessionStorage.setItem("light-mode", true);
+// Check if dark mode is already set in local storage
 
-switchButton.addEventListener('click', () => {
-    body.classList.toggle('light-mode');
-    switchButton.classList.toggle('light-mode');
-    switchButtonBall.classList.toggle('light-mode');
-    sessionStorage.getItem("light-mode");
+  if (darkMode = localStorage.getItem("darkMode") === true) {
+    // Apply light mode styles if it's set to false
+    body.classList.remove("light-mode");
+    menu.classList.remove("light-mode");
+    nav.classList.remove("light-mode");
+    darkLightModeContainer.classList.remove("light-mode");
+    lightModeBtn.classList.remove("clicked");
+    darkModeBtn.classList.add("clicked");
+
+    localStorage.setItem("dakrMode", true);
+
+  } else {
+    // Apply dark mode styles if it's set to true
+    body.classList.add("light-mode");
+    menu.classList.add("light-mode");
+    nav.classList.add("light-mode");
+    darkLightModeContainer.classList.add("light-mode");
+    darkModeBtn.classList.remove("clicked");
+    lightModeBtn.classList.add("clicked");
+
+
+    localStorage.setItem("darkMode", false);
+
+  }
+
+// Event listener for the mode switcher that toggles the desired styles
+darkModeBtn.addEventListener("click", () => {
+  if (lightModeBtn.classList.contains("clicked")) {
+    lightModeBtn.classList.remove("clicked");
+    darkModeBtn.classList.remove("light-mode");
+  }
+
+  body.classList.remove("light-mode");
+  menu.classList.remove("light-mode");
+  nav.classList.remove("light-mode");
+  darkLightModeContainer.classList.remove("light-mode");
+
+  darkModeBtn.classList.add("clicked");
+  buttons.classList.remove("light-mode");
+
+  darkMode = true;
+
+  localStorage.setItem("darkMode", true);
 });
 
+lightModeBtn.addEventListener("click", () => {
+  if (darkModeBtn.classList.contains("clicked")) {
+    darkModeBtn.classList.remove("clicked");
+    darkModeBtn.classList.add("light-mode");
+  }
 
-// 2. Create a CSS class for dark mode and light mode, apply it to the body of your HTML page
-// 3. Use JavaScript to add an event listener to the button, so when it is clicked, it toggles the dark and light modes
+  body.classList.add("light-mode");
+  menu.classList.add("light-mode");
+  nav.classList.add("light-mode");
+  darkLightModeContainer.classList.add("light-mode");
+
+  lightModeBtn.classList.add("clicked");
+
+  darkMode = false;
+  localStorage.setItem("darkMode", false);
+});
+
+nav.addEventListener('click', () => {
+  nav.classList.toggle('opened');
+  if(menu.classList.contains("hidden")){
+    menu.classList.remove("hidden");
+  }
+  else{
+    menu.classList.add("hidden");
+  }
+});
