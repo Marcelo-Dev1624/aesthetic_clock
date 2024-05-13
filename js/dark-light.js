@@ -10,12 +10,11 @@ const menu = document.getElementById("menu");
 const nav = document.getElementById("navToggler");
 let darkMode = false; // Initialize dark mode as true
 
-const metaThemeColor = document.querySelector("meta[name=theme-color");
+const metaThemeColor = document.querySelector("meta[name=theme-color]");
 const darkColor = "#030303";
 const lightColor = "#e2e2e2";
 
-const metaAppleStatusBar = document.querySelector('meta[name=apple-mobile-web-app-status-bar-style]');
-
+const metaAppleStatusBar = document.querySelector("meta[name=apple-mobile-web-app-status-bar-style]");
 
 // Check if dark mode is already set in local storage
 
@@ -27,8 +26,8 @@ if ((darkMode = localStorage.getItem("darkMode") === "false")) {
   darkLightModeContainer.classList.add("light-mode");
   lightModeBtn.classList.add("clicked");
   darkModeBtn.classList.remove("clicked");
-  metaThemeColor.setAttribute('content', lightColor);
-  metaAppleStatusBar.setAttribute('content', lightColor);
+  metaThemeColor.setAttribute("content", lightColor);
+  metaAppleStatusBar.setAttribute("content", lightColor);
 
   localStorage.setItem("darkMode", false);
 } else {
@@ -39,8 +38,8 @@ if ((darkMode = localStorage.getItem("darkMode") === "false")) {
   darkLightModeContainer.classList.remove("light-mode");
   darkModeBtn.classList.add("clicked");
   lightModeBtn.classList.remove("clicked");
-  metaThemeColor.setAttribute('content', darkColor);
-  metaAppleStatusBar.setAttribute('content', darkColor);
+  metaThemeColor.setAttribute("content", darkColor);
+  metaAppleStatusBar.setAttribute("content", darkColor);
 
   localStorage.setItem("darkMode", true);
 }
@@ -50,14 +49,14 @@ darkModeBtn.addEventListener("click", () => {
   if (lightModeBtn.classList.contains("clicked")) {
     lightModeBtn.classList.remove("clicked");
     darkModeBtn.classList.remove("light-mode");
-    
+
     //if the validation is true, that means darkmode is off,
     //so property is set to true
     darkMode = true;
     localStorage.setItem("darkMode", true);
   }
-  metaAppleStatusBar.setAttribute('content', darkColor);
-  metaThemeColor.setAttribute('content', darkColor);
+  metaAppleStatusBar.setAttribute("content", darkColor);
+  metaThemeColor.setAttribute("content", darkColor);
   body.classList.remove("light-mode");
   menu.classList.remove("light-mode");
   nav.classList.remove("light-mode");
@@ -76,8 +75,8 @@ lightModeBtn.addEventListener("click", () => {
     darkMode = false;
     localStorage.setItem("darkMode", false);
   }
-  metaAppleStatusBar.setAttribute('content', lightColor);
-  metaThemeColor.setAttribute('content', lightColor);
+  metaAppleStatusBar.setAttribute("content", lightColor);
+  metaThemeColor.setAttribute("content", lightColor);
   body.classList.add("light-mode");
   menu.classList.add("light-mode");
   nav.classList.add("light-mode");
