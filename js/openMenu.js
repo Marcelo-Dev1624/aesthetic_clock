@@ -18,10 +18,10 @@ const lightColor = "#e2e2e2";
 
 nav.addEventListener("click", () => {
   nav.classList.toggle("opened");
-  if (menu.classList.contains("opened")) {
-    menu.classList.remove("opened");
+  if (menu.classList.contains("open")) {
+    menu.classList.remove("open");
   } else {
-    menu.classList.add("opened");
+    menu.classList.add("open");
   }
 });
 

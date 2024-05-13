@@ -58,7 +58,7 @@ body.light-mode {
   background-color: var(--light-color);
 }
 
-#menu.opened {
+#menu.open {
   right: 0;
 }
 
