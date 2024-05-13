@@ -15,6 +15,17 @@ const darkColor = "#030303";
 const lightColor = "#e2e2e2";
 
 
+
+nav.addEventListener("click", () => {
+  nav.classList.toggle("opened");
+  if (menu.classList.contains("opened")) {
+    menu.classList.remove("opened");
+  } else {
+    menu.classList.add("opened");
+  }
+});
+
+
 // Check if dark mode is already set in local storage
 
 if ((darkMode = localStorage.getItem("darkMode") === "false")) {
@@ -84,11 +95,4 @@ lightModeBtn.addEventListener("click", () => {
   lightModeBtn.classList.add("clicked");
 });
 
-nav.addEventListener("click", () => {
-  nav.classList.toggle("opened");
-  if (menu.classList.contains("hidden")) {
-    menu.classList.remove("hidden");
-  } else {
-    menu.classList.add("hidden");
-  }
-});
+
