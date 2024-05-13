@@ -33,7 +33,7 @@ body.light-mode {
 
 #menu {
   display: flex;
-  position: absolute;
+  position: fixed;
   top: 0;
   right: -1500px;
   flex-direction: column;
