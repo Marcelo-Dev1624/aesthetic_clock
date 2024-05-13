@@ -3,6 +3,11 @@
   --dark-color: #030303;
 }
 
+*{
+
+  box-sizing: border-box;
+}
+
 body {
   display: flex;
   overflow: hidden;
@@ -444,7 +449,7 @@ body.light-mode {
   }
 
   #darkLightModeContainer {
-    width: 80%;
+    width: 65%;
     height: auto;
     padding: 1rem ;
     display: flex;
