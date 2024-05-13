@@ -393,6 +393,8 @@ body.light-mode {
     align-items: center;
     gap: 1rem;
     position: relative;
+    top: 0;
+    right: 0;
   }
 
   .divider {
