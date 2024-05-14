@@ -391,6 +391,13 @@ body.light-mode {
     margin: 1px;
   }
 
+  .container{
+    height: 90vh;
+    top: 0;
+    position: absolute;
+    padding: 2rem;
+  }
+
   #clock {
     width: 100%;
     height: 20%;
