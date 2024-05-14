@@ -18,13 +18,13 @@ body {
   color: var(--light-color);
 
   font-family: "JetBrains Mono", sans-serif;
-  transition: color 300ms ease-in-out;
+  transition:  all 0.3s ease-in-out;
 }
 
 body.light-mode {
   background-color: var(--light-color);
   color: var(--dark-color);
-  transition: color 300ms ease-in-out;
+
 }
 
 /* ALL THE STYLES FOR THE MENU 
@@ -43,7 +43,7 @@ body.light-mode {
   height: 100%;
   background-color: var(--dark-color);
   color: var(--light-color);
-  transition: right 0.2s ease-in-out;
+  transition:  all 0.3s ease-in-out;
   z-index: 11;
   backdrop-filter: blur(7.7px);
   -webkit-backdrop-filter: blur(7.7px);
@@ -83,7 +83,7 @@ body.light-mode {
   height: 2px;
   background-color: var(--light-color);
   margin: 5px auto;
-  transition: 0.4s;
+  transition: 0.3s;
   z-index: 12;
 }
 .nav-toggler.light-mode .bar {
@@ -132,7 +132,7 @@ body.light-mode {
   backdrop-filter: blur(7.7px);
   -webkit-backdrop-filter: blur(7.7px);
   color: var(--light-color);
-  transition: color 300ms ease-in-out;
+  transition:  all 0.3s ease-in-out;
 }
 
 
@@ -390,6 +390,7 @@ body.light-mode {
     overflow: hidden;
     min-height: 100vh;
     margin: 1px;
+
   }
 
   .container{
