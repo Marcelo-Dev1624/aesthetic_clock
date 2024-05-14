@@ -393,7 +393,7 @@ body.light-mode {
   }
 
   .container{
-    height: 90vh;
+    height: 100vh;
     top: 0;
     position: absolute;
     padding: 2rem;
