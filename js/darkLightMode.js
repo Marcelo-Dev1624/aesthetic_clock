@@ -20,9 +20,14 @@ nav.addEventListener("click", () => {
   nav.classList.toggle("opened");
   if (menu.classList.contains("open")) {
     menu.classList.remove("open");
+    if (darkMode) {
+      metaThemeColor.setAttribute("content", darkColor);
+    } else {
+      metaThemeColor.setAttribute("content", lightColor);
+    }
   } else {
     menu.classList.add("open");
-    if (!darkMode) {
+    if (darkMode) {
       metaThemeColor.setAttribute("content", menuDarkColor);
     } else {
       metaThemeColor.setAttribute("content", menuLightColor);
