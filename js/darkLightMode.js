@@ -36,6 +36,7 @@ if ((darkMode = localStorage.getItem("darkMode") === "false")) {
   darkLightModeContainer.classList.add("light-mode");
   lightModeBtn.classList.add("clicked");
   darkModeBtn.classList.remove("clicked");
+  darkModeBtn.classList.add('light-mode');
   metaThemeColor.setAttribute("content", lightColor);
 
 
