@@ -564,7 +564,7 @@ background-color: rgba(24, 24, 24, 0.79);
 }
 
 
-@media only screen and (max-width: 767px) {
+@media only screen and (min-width:768px) and (max-width:930px) {
   body {
     overflow: hidden;
     min-height: 100vh;
@@ -677,6 +677,7 @@ background-color: rgba(24, 24, 24, 0.79);
 
   #darkLightModeContainer h2{
     font-size: 1.5rem;
+    margin: 0.4rem;
   }
   
   .appearanceContainer {
@@ -687,6 +688,167 @@ background-color: rgba(24, 24, 24, 0.79);
     width: 100%;
     height: 50%;
     gap: 0;
+    padding: 0;
+  }
+
+  #appearance-btn-container{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width:100%;
+    height: 50%;
+    gap: 0;
+    padding: .5rem;
+  
+  }
+  
+  .btn {
+    min-width: auto;
+    max-width: 30%;
+    min-height: 40%;
+    max-height: 80%;
+    margin: .5rem;
+    border-radius: 10px;
+    background-color: transparent;
+    color: var(--dark-color);
+    border: none;
+    cursor: pointer;
+    outline: none;
+    font-size: 1.5rem;
+    transition: all 300ms ease-in-out;
+
+  }
+  
+
+}
+
+@media only screen and (max-width:767px) {
+  body {
+    overflow: hidden;
+    min-height: 100vh;
+    margin: 1px;
+
+  }
+
+  .container{
+    height: 100vh;
+    top: 0;
+    position: absolute;
+    padding: 2rem;
+  }
+
+  #clock {
+    width: 100%;
+    height: 20%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    position: relative;
+    top: 0;
+    right: 0;
+  }
+
+  .divider {
+    font-size: 3rem;
+  }
+
+  #seconds,
+  #minutes,
+  #hours {
+    font-size: 4rem;
+  }
+
+  #date {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    width: 20%;
+  }
+
+  .date-divider {
+    font-size: 1rem;
+  }
+
+  #day,
+  #month,
+  #year {
+    font-size: 1.5rem;
+  }
+
+  #navToggler {
+    position: absolute;
+    right: 0px;
+    top: 50px;
+    width: 50px;
+  
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    z-index: 101;
+
+  }
+
+  #menu{
+    height: 100%;
+    width: 100%;
+  }
+
+  #menu h1{
+    font-size: 3rem;
+    position: relative;
+    z-index: 110;
+  }
+
+  #darkLightModeContainer {
+    width: 100%;
+    height: 100%;
+    padding: .5rem ;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  
+    /* From https://css.glass */
+    background: rgba(50, 50, 50, 0.79);
+    border-radius: 0;
+    box-shadow: 0 4px 30px rgba(216, 216, 216, 0.159);
+    backdrop-filter: blur(7.7px);
+    -webkit-backdrop-filter: blur(7.7px);
+    color: var(--light-color);
+    transition: color 300ms ease-in-out;
+  }
+  
+  
+  #darkLightModeContainer.light-mode {
+    /* From https://css.glass */
+    background: rgba(191, 191, 191, 0.79);
+    border-radius: 0;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(7.7px);
+    -webkit-backdrop-filter: blur(7.7px);
+    color: var(--dark-color);
+  }
+
+  #darkLightModeContainer h2{
+    font-size: 1.5rem;
+    margin: 0.4rem;
+  }
+  
+  .appearanceContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 50%;
+    gap: 0;
+    padding: 0;
   }
 
   #appearance-btn-container{
@@ -702,8 +864,10 @@ background-color: rgba(24, 24, 24, 0.79);
   }
   
   .btn {
-    width: 90%;
-    height: 4rem;
+    min-width: auto;
+    max-width: 80%;
+    min-height: 40%;
+    max-height: 90%;
     margin: .5rem;
     border-radius: 10px;
     background-color: transparent;
@@ -713,7 +877,7 @@ background-color: rgba(24, 24, 24, 0.79);
     outline: none;
     font-size: 1.5rem;
     transition: all 300ms ease-in-out;
-    font-family: "JetBrains Mono", sans-serif;
+
   }
   
 
