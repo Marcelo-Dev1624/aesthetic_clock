@@ -46,7 +46,7 @@ if ((darkMode = localStorage.getItem("darkMode") === "false")) {
   lightModeBtn.classList.add("clicked");
   darkModeBtn.classList.remove("clicked");
   darkModeBtn.classList.add("light-mode");
-  metaThemeColor.setAttribute("content", menuLightColor);
+  metaThemeColor.setAttribute("content", lightColor);
 
   localStorage.setItem("darkMode", false);
 } else {
@@ -57,7 +57,7 @@ if ((darkMode = localStorage.getItem("darkMode") === "false")) {
   darkLightModeContainer.classList.remove("light-mode");
   darkModeBtn.classList.add("clicked");
   lightModeBtn.classList.remove("clicked");
-  metaThemeColor.setAttribute("content", menuDarkColor);
+  metaThemeColor.setAttribute("content", darkColor);
 
   localStorage.setItem("darkMode", true);
 }
@@ -74,7 +74,7 @@ darkModeBtn.addEventListener("click", () => {
     localStorage.setItem("darkMode", true);
   }
 
-  metaThemeColor.setAttribute("content", menuDarkColor);
+  metaThemeColor.setAttribute("content", darkColor);
   body.classList.remove("light-mode");
   menu.classList.remove("light-mode");
   nav.classList.remove("light-mode");
@@ -94,7 +94,7 @@ lightModeBtn.addEventListener("click", () => {
     localStorage.setItem("darkMode", false);
   }
 
-  metaThemeColor.setAttribute("content", menuLightColor);
+  metaThemeColor.setAttribute("content", lightColor);
   body.classList.add("light-mode");
   menu.classList.add("light-mode");
   nav.classList.add("light-mode");
