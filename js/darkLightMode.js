@@ -25,6 +25,16 @@ nav.addEventListener("click", () => {
   }
 });
 
+
+if(menu.classList.contains("open")){
+  if(darkMode){
+    metaThemeColor.setAttribute("content", menuDarkColor);
+  }
+  else{
+    metaThemeColor.setAttribute("content", menuLightColor);
+  }
+}
+
 // Check if dark mode is already set in local storage
 
 if ((darkMode = localStorage.getItem("darkMode") === "false")) {
