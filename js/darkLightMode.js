@@ -13,8 +13,8 @@ let darkMode = false; // Initialize dark mode as true
 const metaThemeColor = document.querySelector("meta[name=theme-color]");
 const darkColor = "#030303";
 const lightColor = "#e2e2e2";
-const menuDarkColor = "rgba(50, 50, 50, 0.79)";
-const menuLightColor = "rgba(191, 191, 191, 0.79)";
+const menuDarkColor = "#2a2a2a";
+const menuLightColor = "#cacaca";
 
 nav.addEventListener("click", () => {
   nav.classList.toggle("opened");

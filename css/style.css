@@ -1,8 +1,9 @@
 :root {
   --light-color: #e2e2e2;
   --dark-color: #030303;
-  --menu-light-color:rgba(191, 191, 191, 0.79);
-  --menu-dark-color:rgba(50, 50, 50, 0.79);
+  --dark-color-shade1:#222222;
+  --menu-light-color:#cacaca;
+  --menu-dark-color:#2a2a2a;
 }
 
 *{
@@ -202,7 +203,7 @@ body.light-mode {
 
 }
 #lightModeBtn{
-background-color: rgba(24, 24, 24, 0.79);
+background-color: var(--dark-color-shade1);
   color: var(--light-color);
 
 
@@ -357,7 +358,7 @@ background-color: rgba(24, 24, 24, 0.79);
     align-items: center;
   
     /* From https://css.glass */
-    background: rgba(50, 50, 50, 0.79);
+    background:var(--menu-dark-color);
     border-radius: 20px;
     box-shadow: 0 4px 30px rgba(216, 216, 216, 0.159);
     backdrop-filter: blur(7.7px);
@@ -369,7 +370,7 @@ background-color: rgba(24, 24, 24, 0.79);
   
   #darkLightModeContainer.light-mode {
     /* From https://css.glass */
-    background: rgba(191, 191, 191, 0.79);
+    background: var(--menu-light-color);
     border-radius: 20px;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(7.7px);
@@ -501,7 +502,7 @@ background-color: rgba(24, 24, 24, 0.79);
     align-items: center;
   
     /* From https://css.glass */
-    background: rgba(50, 50, 50, 0.79);
+    background: var(--menu-dark-color);
     border-radius: 20px;
     box-shadow: 0 4px 30px rgba(216, 216, 216, 0.159);
     backdrop-filter: blur(7.7px);
@@ -513,7 +514,7 @@ background-color: rgba(24, 24, 24, 0.79);
   
   #darkLightModeContainer.light-mode {
     /* From https://css.glass */
-    background: rgba(191, 191, 191, 0.79);
+    background: var(--menu-light-color);
     border-radius: 20px;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(7.7px);
@@ -565,8 +566,7 @@ background-color: rgba(24, 24, 24, 0.79);
   
 }
 
-
-@media only screen and (min-width:767px) and (orientation:landscape) {
+@media only screen and (min-width:390px) and (max-width:932px) and (orientation:landscape) {
   body {
     overflow: hidden;
     min-height: 100vh;
@@ -699,18 +699,16 @@ background-color: rgba(24, 24, 24, 0.79);
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    width:100%;
-    height: 50%;
+    width: 100%;
+    height: 100%;
     gap: 0;
     padding: .5rem;
   
   }
   
   .btn {
-    min-width: auto;
-    max-width: 30%;
-    min-height: 40%;
-    max-height: 80%;
+    width: 25rem;
+    height: 3.5rem;
     margin: .5rem;
     border-radius: 10px;
     background-color: transparent;
@@ -722,11 +720,11 @@ background-color: rgba(24, 24, 24, 0.79);
     transition: all 300ms ease-in-out;
 
   }
-  
+
 
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:767px) and (orientation:portrait) {
   body {
     overflow: hidden;
     min-height: 100vh;
