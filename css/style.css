@@ -566,7 +566,7 @@ background-color: var(--dark-color-shade1);
   
 }
 
-@media only screen and (min-width:390px) and (max-width:932px) and (orientation:landscape) {
+@media only screen and (max-width:932px) and (orientation:landscape) {
   body {
     overflow: hidden;
     min-height: 100vh;
