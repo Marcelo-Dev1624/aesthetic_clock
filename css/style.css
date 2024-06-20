@@ -2,8 +2,8 @@
   --light-color: #e2e2e2;
   --dark-color: #030303;
   --dark-color-shade1:#222222;
-  --menu-light-color:#cacaca;
-  --menu-dark-color:#2a2a2a;
+  --menu-light-color:#b6b6b6;
+  --menu-dark-color:#2b2b2b;
 }
 
 *{
@@ -46,8 +46,8 @@ body.light-mode {
   height: 100%;
   background-color: var(--dark-color);
   color: var(--light-color);
-  transition:  all 0.3s ease-in-out;
-  z-index: 11;
+  transition:  all 0.2s ease-in-out;
+  z-index: 2;
   backdrop-filter: blur(7.7px);
   -webkit-backdrop-filter: blur(7.7px);
 }
@@ -131,25 +131,12 @@ body.light-mode {
   justify-content: center;
   align-items: center;
 
-  /* From https://css.glass */
-  background: var(--menu-dark-color);
-  border-radius: 20px;
-  box-shadow: 0 4px 30px rgba(216, 216, 216, 0.159);
-  backdrop-filter: blur(7.7px);
-  -webkit-backdrop-filter: blur(7.7px);
-  color: var(--light-color);
-  transition:  all 0.3s ease-in-out;
+
 }
 
 
 #darkLightModeContainer.light-mode {
-  /* From https://css.glass */
-  background: var(--menu-light-color);
-  border-radius: 20px;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(7.7px);
-  -webkit-backdrop-filter: blur(7.7px);
-  color: var(--dark-color);
+
 }
 
 #darkLightModeContainer h2{
@@ -303,6 +290,7 @@ background-color: var(--dark-color-shade1);
   #minutes,
   #hours {
     font-size: 8rem;
+    margin: 0 2.5rem;
   }
 
   #date {
@@ -310,7 +298,7 @@ background-color: var(--dark-color-shade1);
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    gap: 0.5rem;
+    gap: 1.5rem;
     width: 20%;
   }
 
@@ -357,25 +345,10 @@ background-color: var(--dark-color-shade1);
     justify-content: center;
     align-items: center;
   
-    /* From https://css.glass */
-    background:var(--menu-dark-color);
-    border-radius: 20px;
-    box-shadow: 0 4px 30px rgba(216, 216, 216, 0.159);
-    backdrop-filter: blur(7.7px);
-    -webkit-backdrop-filter: blur(7.7px);
-    color: var(--light-color);
-    transition: color 300ms ease-in-out;
   }
   
   
   #darkLightModeContainer.light-mode {
-    /* From https://css.glass */
-    background: var(--menu-light-color);
-    border-radius: 20px;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(7.7px);
-    -webkit-backdrop-filter: blur(7.7px);
-    color: var(--dark-color);
   }
 
   #darkLightModeContainer h2{
@@ -447,6 +420,7 @@ background-color: var(--dark-color-shade1);
   #minutes,
   #hours {
     font-size: 8rem;
+    
   }
 
   #date {
@@ -502,24 +476,12 @@ background-color: var(--dark-color-shade1);
     align-items: center;
   
     /* From https://css.glass */
-    background: var(--menu-dark-color);
-    border-radius: 20px;
-    box-shadow: 0 4px 30px rgba(216, 216, 216, 0.159);
-    backdrop-filter: blur(7.7px);
-    -webkit-backdrop-filter: blur(7.7px);
-    color: var(--light-color);
-    transition: color 300ms ease-in-out;
+ 
   }
   
   
   #darkLightModeContainer.light-mode {
-    /* From https://css.glass */
-    background: var(--menu-light-color);
-    border-radius: 20px;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(7.7px);
-    -webkit-backdrop-filter: blur(7.7px);
-    color: var(--dark-color);
+
   }
 
   #darkLightModeContainer h2{
@@ -643,7 +605,7 @@ background-color: var(--dark-color-shade1);
 
   #menu h1{
     font-size: 3rem;
-    top: -20px;
+
     position: relative;
     z-index: 110;
   }
@@ -656,30 +618,16 @@ background-color: var(--dark-color-shade1);
     flex-direction: column;
     justify-content: center;
     align-items: center;
-  
-    /* From https://css.glass */
-    background: var(--menu-dark-color);
-    border-radius: 0;
-    box-shadow: 0 4px 30px rgba(216, 216, 216, 0.159);
-    backdrop-filter: blur(7.7px);
-    -webkit-backdrop-filter: blur(7.7px);
-    color: var(--light-color);
-    transition: color 300ms ease-in-out;
+
   }
   
   
   #darkLightModeContainer.light-mode {
-    /* From https://css.glass */
-    background: var(--menu-light-color);
-    border-radius: 0;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(7.7px);
-    -webkit-backdrop-filter: blur(7.7px);
-    color: var(--dark-color);
+
   }
 
   #darkLightModeContainer h2{
-    font-size: 1.5rem;
+    font-size: 2rem;
     margin: 0.4rem;
   }
   
@@ -692,32 +640,34 @@ background-color: var(--dark-color-shade1);
     height: 60%;
     gap: 0;
     padding: 0;
+    
   }
 
   #appearance-btn-container{
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     justify-content: center;
     align-items: center;
-    width: 100%;
-    height: 100%;
+    width:80%;
+    height: 50%;
     gap: 0;
     padding: .5rem;
   
   }
   
   .btn {
-    width: 25rem;
-    height: 3.5rem;
+    width: 100%;
+    max-width: 13rem;
+    height: 80%;
     border-radius: 10px;
     background-color: transparent;
-    color: var(--dark-color);
     border: none;
     cursor: pointer;
     outline: none;
     font-size: 1.5rem;
     transition: all 300ms ease-in-out;
+    margin: .3rem;
 
   }
 
@@ -814,29 +764,16 @@ background-color: var(--dark-color-shade1);
     justify-content: center;
     align-items: center;
   
-    /* From https://css.glass */
-    background: var(--menu-dark-color);
-    border-radius: 0;
-    box-shadow: 0 4px 30px rgba(216, 216, 216, 0.159);
-    backdrop-filter: blur(7.7px);
-    -webkit-backdrop-filter: blur(7.7px);
-    color: var(--light-color);
-    transition: color 300ms ease-in-out;
+
   }
   
   
   #darkLightModeContainer.light-mode {
-    /* From https://css.glass */
-    background: var(--menu-light-colorl);
-    border-radius: 0;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(7.7px);
-    -webkit-backdrop-filter: blur(7.7px);
-    color: var(--dark-color);
+
   }
 
   #darkLightModeContainer h2{
-    font-size: 1.5rem;
+    font-size: 2rem;
     margin: 0.4rem;
   }
   
@@ -864,14 +801,14 @@ background-color: var(--dark-color-shade1);
   }
   
   .btn {
-    min-width: auto;
-    max-width: 80%;
-    min-height: 40%;
-    max-height: 90%;
+    width: 100%;
+    max-width: 14rem;
+    height: 100%;
+    max-height: 4.5rem;
     margin: .5rem;
     border-radius: 10px;
     background-color: transparent;
-    color: var(--dark-color);
+
     border: none;
     cursor: pointer;
     outline: none;
