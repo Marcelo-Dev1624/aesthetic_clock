@@ -55,7 +55,8 @@ body.light-mode {
 #menu h1 {
   font-size: 4rem;
   position: absolute;
-  top: 0;
+  top: 90px;
+
 }
 
 #menu.light-mode {
@@ -334,6 +335,7 @@ background-color: var(--dark-color-shade1);
     font-size: 4rem;
     position: relative;
     z-index: 110;
+
   }
 
   #darkLightModeContainer {
@@ -464,6 +466,7 @@ background-color: var(--dark-color-shade1);
     font-size: 4rem;
     position: relative;
     z-index: 110;
+
   }
 
   #darkLightModeContainer {
