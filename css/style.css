@@ -2,8 +2,34 @@
   --light-color: #e2e2e2;
   --dark-color: #030303;
   --dark-color-shade1:#222222;
-  --menu-light-color:#b6b6b6;
-  --menu-dark-color:#2b2b2b;
+  --accent-color: #56ffab;
+
+  .primary{
+    color: var(--dark-color);
+  }
+
+  .secondary{
+    color: var(--light-color);
+  }
+
+  .accent{
+    color: var(--accent-color);
+  }
+
+  .author-btn{
+    color: var(--accent-color);
+    padding: 1rem 1.5rem ;
+    border-radius: 50px;
+    border: 2px solid var(--accent-color);
+    transition: 300ms all ease-in-out;
+    text-decoration: none;
+    font-size: 1.25rem;
+    &:hover{
+      background-color: var(--accent-color);
+      color: var(--dark-color);
+
+    }
+  }
 }
 
 *{
@@ -27,6 +53,21 @@ body {
 body.light-mode {
   background-color: var(--light-color);
   color: var(--dark-color);
+
+  .author-btn{
+    color: var(--dark-color);
+    padding: 1rem 1.5rem ;
+    border-radius: 50px;
+    border: 2px solid var(--dark-color);
+    transition: 300ms all ease-in-out;
+    text-decoration: none;
+    
+    &:hover{
+      background-color: var(--dark-color);
+      color: var(--light-color);
+
+    }
+  }
 
 }
 
